@@ -183,11 +183,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void showData(String str) {
+        Toast.makeText(this,str,Toast.LENGTH_SHORT).show();
         if(str.equals("登录成功")){
             Intent intent=new Intent(this,LoginAfterActivity.class);
             startActivity(intent);
+            finish();
         }else{
-            return;
+           return;
         }
     }
 }

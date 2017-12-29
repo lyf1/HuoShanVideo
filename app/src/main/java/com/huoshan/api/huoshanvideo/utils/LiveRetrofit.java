@@ -5,10 +5,10 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by lenovo on 2017/12/28.
+ * Created by lenovo on 2017/12/29.
  */
 
-public class RetrofitUtils {
+public class LiveRetrofit {
     private static ServicrApi servicrApi;
     public static <T> T createApi(Class<T> tClass,String url){
         Retrofit retrofit=new Retrofit.Builder()
@@ -22,7 +22,7 @@ public class RetrofitUtils {
         if(servicrApi==null){
             synchronized (RetrofitUtils.class){
                 if(servicrApi==null){
-                    servicrApi=RetrofitUtils.createApi(ServicrApi.class,UrlUtils.LOGIN_HOST);
+                    servicrApi=RetrofitUtils.createApi(ServicrApi.class,UrlUtils.LIVE_HOST);
                 }
             }
         }

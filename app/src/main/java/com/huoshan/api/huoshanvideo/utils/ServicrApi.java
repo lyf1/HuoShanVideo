@@ -1,6 +1,7 @@
-package com.huoshan.api.huoshanvideo.Login;
+package com.huoshan.api.huoshanvideo.utils;
 
 import com.huoshan.api.huoshanvideo.Bean.BaseBean;
+import com.huoshan.api.huoshanvideo.Bean.LiveBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -14,4 +15,7 @@ public interface ServicrApi {
     @GET("user/login")
     Call<BaseBean> login(@Query("mobile") String mob, @Query("password") String pwd);
 
+    //直播
+    @GET(UrlUtils.LIVE_PATH)
+    Call<LiveBean> getLiveItem();
 }

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.huoshan.api.huoshanvideo.Bean.LiveBean;
 import com.huoshan.api.huoshanvideo.R;
 import com.huoshan.api.huoshanvideo.utils.GlideImageLoader;
 import com.youth.banner.Banner;
@@ -21,7 +22,7 @@ import java.util.List;
  * Created by lenovo on 2017/12/28.
  */
 
-public class LiveFragment extends Fragment {
+public class LiveFragment extends Fragment implements LiveApi{
     private View view;
     private Banner mLBanner;
     private RecyclerView mLRv;
@@ -48,4 +49,9 @@ public class LiveFragment extends Fragment {
         mLRv.setLayoutManager(new GridLayoutManager(getContext(),2));
     }
 
+    @Override
+    public void showData(LiveBean liveBean) {
+        List<LiveBean.DataBeanX> data = liveBean.getData();
+
+    }
 }
